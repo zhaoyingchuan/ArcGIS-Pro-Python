@@ -11,3 +11,4 @@ if "总人" in uniqueList:
     print("True")
 else:
     print("False")
+    print(feature_class)
