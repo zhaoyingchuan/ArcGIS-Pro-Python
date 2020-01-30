@@ -1,16 +1,14 @@
-#coding=utf-8
 import arcpy
-# 设置输入要素
-inputFeatures = arcpy.GetParameterAsText(0)
-# 设置裁剪要素
-clipFeatures = arcpy.GetParameterAsText(1)
-# 设置输出要素
-outFeatures = arcpy.GetParameterAsText(2)
-# Use scratchGDB environment to write intermediate data
-tempData = arcpy.CreateScratchName(workspace=arcpy.env.scratchGDB)
-try:
-      clipOutFeatureClass = arcpy.Clip_analysis(inputFeatures, clipFeatures, tempData, 1.5)
-      arcpy.Buffer_analysis(clipOutFeatureClass, outFeatures, "10 Kilometers", "FULL", "ROUND", "NONE")
-except Exception as err:
-    arcpy.AddError(err)
-    print(err)
+
+# Create a Describe object from the GDB table.
+#
+desc = arcpy.Describe(r"D:\\Documents\\ArcGIS\\Projects\\安远县两规融合数据审查\\安远县两规融合数据审查.gdb\\土规\\安远县土规调出地块（逻辑）")
+
+# Print GDB Table properties
+#
+print("%-22s %s" % ("AliasName:", desc.aliasName))
+print("%-22s %s" % ("DefaultSubtypeCode:", desc.defaultSubtypeCode))
+print("%-22s %s" % ("GlobalIDFieldName:", desc.globalIDFieldName))
+print("%-22s %s" % ("ModelName:", desc.modelName))
+print("%-22s %s" % ("RasterFieldName:", desc.rasterFieldName))
+print("%-22s %s" % ("RelationshipClassNames:", desc.relationshipClassNames))
