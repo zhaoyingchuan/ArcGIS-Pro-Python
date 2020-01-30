@@ -1,14 +1,12 @@
+import os
 import arcpy
-
-# Create a Describe object from the GDB table.
+# Get the input and output workspaces
 #
-desc = arcpy.Describe(r"D:\\Documents\\ArcGIS\\Projects\\安远县两规融合数据审查\\安远县两规融合数据审查.gdb\\土规\\安远县土规调出地块（逻辑）")
+arcpy.env.workspace = r"D:\\Documents\\ArcGIS\\Projects\\安远县两规融合数据审查\\安远县两规融合数据审查.gdb\\土规"
 
-# Print GDB Table properties
+# Get a list of input feature classes to be copied and copy
+#  to new output location
 #
-print("%-22s %s" % ("AliasName:", desc.aliasName))
-print("%-22s %s" % ("DefaultSubtypeCode:", desc.defaultSubtypeCode))
-print("%-22s %s" % ("GlobalIDFieldName:", desc.globalIDFieldName))
-print("%-22s %s" % ("ModelName:", desc.modelName))
-print("%-22s %s" % ("RasterFieldName:", desc.rasterFieldName))
-print("%-22s %s" % ("RelationshipClassNames:", desc.relationshipClassNames))
+for fc in arcpy.ListFeatureClasses():
+    out_fc = arcpy.ValidateTableName(fc)
+    print(out_fc)

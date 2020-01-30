@@ -32,6 +32,7 @@ for row1 in rows1:
     extent2 = mf2.getLayerExtent(lyr3, "False", "True")
     mf2.camera.setExtent(extent2)
     mf2.camera.scale = mf1.camera.scale
+
     lyt.exportToJPEG(r"D:\\Desktop\\德安两规融合成果\\土规调入附图\\" + str(row1.getValue("Layer")) + row1.getValue("项目名称"),
                      resolution=300)
 
