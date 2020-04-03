@@ -11,4 +11,4 @@ if fid in uniquelist:
     t = 'true'
 else:
     t = 'False'
-arcpy.SetParameterAsText(2, t) #arcpy.GetParameterAsText(2)为第一个输出的参数
+arcpy.SetParameterAsText(2, t) #arcpy.SetParameterAsText(2)为第一个输出的参数，输出为t
