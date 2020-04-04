@@ -6,6 +6,6 @@ map = aprx.listMaps()
 for m in map:
     lyr = m.listLayers()
     for l in lyr:
-        if l.name == '中心城区':
+        if l.name == '公交线':
             l.visible = False
 aprx.save()
