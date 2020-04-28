@@ -1,23 +1,8 @@
+# coding=utf-8
 import arcpy
-import os
-file_dir="D:\\Documents\\ArcGIS\\Projects"
 
-for root, dirs, files in os.walk(file_dir):
-    if ".gdb" in root:
-        print(root)
-
-        # arcpy.env.workspace = root
-        # for fc in arcpy.ListFeatureClasses():#未指定feature_dataset则表示只列出独立要素类
-        #     arcpy.Delete_management(fc)
-        #     print("  已删除  "+fc)
-        # for fc in arcpy.ListTables():
-        #     arcpy.Delete_management(fc)
-        #     print("  已删除  "+fc)
-
-
-
-        arcpy.env.workspace = root
-        datasets = arcpy.ListDatasets("基础数据", "Feature")
-        for dataset in datasets:
-            arcpy.Delete_management(dataset)
-            print("  已删除  "+dataset)
+aprx = arcpy.mp.ArcGISProject('D:\Documents\ArcGIS\Projects\万年县两规融合数据审查\万年县两规融合数据审查.aprx')
+map = aprx.listMaps('地图')[0]
+for lyr in map.listLayers():
+    if lyr.isFeatureLayer:
+        print(arcpy.Describe(lyr).aliasName)
