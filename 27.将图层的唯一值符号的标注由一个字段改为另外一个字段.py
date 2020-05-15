@@ -1,4 +1,4 @@
-import arcpy, os, sys
+import arcpy
 
 p = arcpy.mp.ArcGISProject('CURRENT')
 m = p.listMaps('地图')[0]
