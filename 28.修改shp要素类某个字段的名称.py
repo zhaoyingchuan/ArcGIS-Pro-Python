@@ -10,3 +10,4 @@ for field in fields:
         newFieldName=arcpy.GetParameterAsText(2)
         arcpy.AddField_management(feature_class, newFieldName, field.type, field.precision, field.scale, field.length, newFieldName)
         arcpy.CalculateField_management(feature_class, newFieldName, "!"+field.name+"!", "PYTHON3")
+        arcpy.DeleteField_management(feature_class, field.name)
