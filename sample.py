@@ -5,21 +5,27 @@ import arcpy
 
 outpath="D://Desktop"
 outgdbname="汇总数据库"
-arcpy.CreateFileGDB_management(outpath,outgdbname) #建立输出地理数据库
-# if arcpy.Exists(outpath+"//"+outgdbname+".gdb"):
-#     pass
-# else:
-#     arcpy.CreateFileGDB_management(outpath,outgdbname) #建立输出地理数据库
+
+if arcpy.Exists(outpath+"//"+outgdbname+".gdb"):
+    pass
+else:
+    arcpy.CreateFileGDB_management(outpath,outgdbname) #建立输出地理数据库
 
 arcpy.env.workspace = "D://Desktop//360426100000.gdb"
 datasets = arcpy.ListDatasets()
 for ds in datasets:
-    desc = arcpy.Describe("D://Desktop//360426100000.gdb"+"//"+ds)
+    desc = arcpy.Describe(ds)
     sr = desc.spatialReference
-    arcpy.CreateFeatureDataset_management(outpath+"//"+outgdbname+".gdb",ds,sr)
+    if arcpy.Exists(outpath + "//" + outgdbname + ".gdb"+"//"+ds):
+        pass
+    else:
+        arcpy.CreateFeatureDataset_management(outpath+"//"+outgdbname+".gdb",ds,sr)  # 建立输出地理数据库
+
     fcs=arcpy.ListFeatureClasses(feature_dataset=ds)
     for fc in fcs:
-        arcpy.CreateFeatureDataset_management(outpath + "//" + outgdbname + ".gdb"+"//"+ds, fc)
+        print(fc)
+        st = arcpy.Describe(fc).shapeType
+        arcpy.CreateFeatureclass_management(outpath + "//" + outgdbname + ".gdb"+"//"+ds,fc,st)
 
 
 
