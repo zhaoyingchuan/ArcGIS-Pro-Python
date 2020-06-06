@@ -1,31 +1,47 @@
 import os
 import arcpy
 
-
-
 outpath="D:\\Desktop"
 outgdbname="汇总数据库"
 
-if arcpy.Exists(outpath+"\\"+outgdbname+".gdb"):
-    pass
-else:
-    arcpy.CreateFileGDB_management(outpath,outgdbname) #建立输出地理数据库
+# if arcpy.Exists(outpath+"\\"+outgdbname+".gdb"):
+#     pass
+# else:
+#     arcpy.CreateFileGDB_management(outpath,outgdbname) #建立输出地理数据库
 
-arcpy.env.workspace = "D:\\Desktop\\吉安市吉安县_生态保护红线基础数据要素图层.gdb"
-datasets = arcpy.ListDatasets()
-for ds in datasets:
-    desc = arcpy.Describe(ds)
-    sr = desc.spatialReference
-    if arcpy.Exists(outpath + "\\" + outgdbname + ".gdb"+"\\"+ds):
-        pass
-    else:
-        arcpy.CreateFeatureDataset_management(outpath+"\\"+outgdbname+".gdb",ds,sr)  # 建立输出地理数据库
+file_dir="D:\\Desktop"
+mylist=os.listdir(file_dir)
+for list in mylist:
+    print(list)
+# for root, dirs, files in os.walk(file_dir):
+#     if ".gdb" in root:
+#         print(root)
 
-    fcs=arcpy.ListFeatureClasses(feature_dataset=ds)
-    for fc in fcs:
-        print(fc)
-        st = arcpy.Describe(fc).shapeType
-        arcpy.CreateFeatureclass_management(outpath + "\\" + outgdbname + ".gdb"+"\\"+ds,fc,st)
+gdblist=["D:\Desktop\吉安市吉安县_生态保护红线基础数据要素图层.gdb",
+         "D:\Desktop\吉安市青原区_生态保护红线基础数据要素图层.gdb",
+         "D:\Desktop\吉安市万安县_生态保护红线基础数据要素图层.gdb",
+         "D:\Desktop\吉安市永新县_生态保护红线基础数据要素图层.gdb"]
+# for gdb in gdblist:
+#     print(gdb)
+#     arcpy.env.workspace = gdb
+#     datasets = arcpy.ListDatasets()
+#     for ds in datasets:
+#         desc = arcpy.Describe(ds)
+#         sr = desc.spatialReference
+#         if arcpy.Exists(outpath + "\\" + outgdbname + ".gdb"+"\\"+ds):
+#             pass
+#         else:
+#             arcpy.CreateFeatureDataset_management(outpath+"\\"+outgdbname+".gdb",ds,sr)  # 建立输出地理数据库
+#             print("    "+ds)
+#
+#         fcs=arcpy.ListFeatureClasses(feature_dataset=ds)
+#         for fc in fcs:
+#             st = arcpy.Describe(fc).shapeType
+#             if arcpy.Exists(outpath + "\\" + outgdbname + ".gdb"+"\\"+ds + "\\" + fc):
+#                 pass
+#             else:
+#                 arcpy.CreateFeatureclass_management(outpath + "\\" + outgdbname + ".gdb"+"\\"+ds,fc,st)
+#                 print("        "+fc)
 
 
 
