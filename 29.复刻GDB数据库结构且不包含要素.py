@@ -12,7 +12,8 @@ outgdbname="汇总数据库"
 file_dir="D:\\Desktop"
 mylist=os.listdir(file_dir)
 for list in mylist:
-    print(list)
+    if ".gdb" in list:
+        print(list)
 # for root, dirs, files in os.walk(file_dir):
 #     if ".gdb" in root:
 #         print(root)
