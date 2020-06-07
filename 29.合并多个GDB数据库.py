@@ -37,18 +37,8 @@ for gdb in gdblist:
                 arcpy.FeatureClassToFeatureClass_conversion(fc,outpath + "\\" + outgdbname + ".gdb"+"\\"+ds,fc)
                 print("        " + fc)
                 arcpy.DeleteFeatures_management(outpath + "\\" + outgdbname + ".gdb"+"\\"+ds + "\\" + fc)
-
-            # if arcpy.Exists(gdb+"\\"+fc):
-            #     arcpy.Append_management(gdb+"\\"+fc,outpath + "\\" + outgdbname + ".gdb" + "\\" + ds + "\\" + fc, "NO_TEST")
-
-                    # arcpy.env.workspace = gdb
-                    # fc_other = arcpy.ListFeatureClasses(fc, "", ds)[0]
-                    # arcpy.Append_management(gdb+fc_other, outpath + "\\" + outgdbname + ".gdb" + "\\" + ds + "\\" + fc,"NO_TEST")
-
-
-                # st = arcpy.Describe(fc).shapeType
-                # arcpy.CreateFeatureclass_management(outpath + "\\" + outgdbname + ".gdb"+"\\"+ds,fc,st)
-                # print("        "+fc)
+            # if arcpy.Exists(gdb+"\\"+ds+"\\"+fc):
+            #     arcpy.Append_management(gdb+"\\"+ds+"\\"+fc,outpath + "\\" + outgdbname + ".gdb" + "\\" + ds + "\\" + fc, "NO_TEST")
 
 print('开始合并GDB数据库中的同名要素类')
 arcpy.env.workspace = outpath+"\\"+outgdbname+".gdb"
