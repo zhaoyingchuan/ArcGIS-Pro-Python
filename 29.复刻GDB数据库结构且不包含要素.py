@@ -38,8 +38,8 @@ for gdb in gdblist:
                 print("        " + fc)
                 arcpy.DeleteFeatures_management(outpath + "\\" + outgdbname + ".gdb"+"\\"+ds + "\\" + fc)
 
-    # if arcpy.Exists(gdb+"\\"+fc):
-    #     arcpy.Append_management(gdb+"\\"+fc,outpath + "\\" + outgdbname + ".gdb" + "\\" + ds + "\\" + fc, "NO_TEST")
+            # if arcpy.Exists(gdb+"\\"+fc):
+            #     arcpy.Append_management(gdb+"\\"+fc,outpath + "\\" + outgdbname + ".gdb" + "\\" + ds + "\\" + fc, "NO_TEST")
 
                     # arcpy.env.workspace = gdb
                     # fc_other = arcpy.ListFeatureClasses(fc, "", ds)[0]
@@ -50,14 +50,15 @@ for gdb in gdblist:
                 # arcpy.CreateFeatureclass_management(outpath + "\\" + outgdbname + ".gdb"+"\\"+ds,fc,st)
                 # print("        "+fc)
 
-
+print('开始合并GDB数据库中的同名要素类')
 arcpy.env.workspace = outpath+"\\"+outgdbname+".gdb"
 datasets = arcpy.ListDatasets()
 for ds in datasets:
+    print('    '+ds)
     fcs=arcpy.ListFeatureClasses(feature_dataset=ds)
     for fc in fcs:
         for gdb in gdblist:
-            if arcpy.Exists(gdb+"\\"+fc):
-                arcpy.Append_management(gdb+"\\"+fc, outpath + "\\" + outgdbname + ".gdb" + "\\" + ds + "\\" + fc,"NO_TEST")
-                print()
+            if arcpy.Exists(gdb+"\\"+ds+"\\"+fc):
+                arcpy.Append_management(gdb+"\\"+ds+"\\"+fc, outpath + "\\" + outgdbname + ".gdb" + "\\" + ds + "\\" + fc,"NO_TEST")
+                print('        '+fc+'  '+'合并成功')
 
