@@ -14,11 +14,10 @@ for row in cursor:
     if key not in uniqueDLBM:
         uniqueDLBM.append(key)
         uniqueDict[key] = value
-print(uniqueDict)
 
 for grp in sym.renderer.groups:
     for itm in grp.items:
-        v=itm.label
+        v=itm.values[0][0]
         itm.label = uniqueDict[v]
         print(v+"---"+itm.label)
 
