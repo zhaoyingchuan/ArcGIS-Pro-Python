@@ -35,10 +35,6 @@ def fill(Field):
         return '无'
     elif Field == '0404':
         return '1805 其他草地'
-    # elif Field == '0508':
-    #     return '09 仓储用地'
-    # elif Field == '0601':
-    #     return '08 工业用地'
     elif Field == '0602':
         return '1601 采矿用地'
     elif Field == '0701':
@@ -47,22 +43,14 @@ def fill(Field):
         return '0602 农村住宅用地'
     elif Field == '08H1':
         return '0701 行政办公用地'
-    # elif Field == '0810':
-    #     return '12 绿地与广场用地'
     elif Field == '0810A':
         return '1203 广场用地'
-    # elif Field == '09':
-    #     return '15 特殊用地'
     elif Field == '1001':
         return '1401 铁路用地'
     elif Field == '1002':
         return '1003 城市轨道交通用地'
     elif Field == '1003':
         return '1402 公路用地'
-    # elif Field == '1004':
-    #     return '10 道路与交通设施用地'
-    # elif Field == '1005':
-    #     return '10 道路与交通设施用地'
     elif Field == '1006':
         return '0502 农村道路'
     elif Field == '1007':
