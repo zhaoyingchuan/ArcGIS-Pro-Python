@@ -22,4 +22,5 @@ for value in uniqueArea:
         if i > 0:
             cursor.deleteRow(row)
         i=i+1
+    del cursor
 
