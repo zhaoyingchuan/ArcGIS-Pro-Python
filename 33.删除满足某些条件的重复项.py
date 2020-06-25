@@ -13,8 +13,7 @@ for row in cursor:
         uniqueArea.append(value)
 
 for value in uniqueArea:
-    cursor = arcpy.UpdateCursor(l, where_clause="Shape_Area = " + str(value), spatial_reference=None, fields=None,
-                                sort_fields="Layer D")
+    cursor = arcpy.UpdateCursor(l, where_clause="Shape_Area = " + str(value), sort_fields="Layer D")
     i = 0
     for row in cursor:
         if i > 0:
