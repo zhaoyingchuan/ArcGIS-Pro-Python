@@ -11,8 +11,8 @@ print(gdblist)
 
 outpath="D:\\Desktop" #合并后汇总数据库所在的文件夹
 outgdbname="汇总数据库" #合并后汇总数据库的名称
-allgdb=outpath+"\\"+outgdbname+".gdb" #汇总数据库的完整路径
-if arcpy.Exists(allgdb): #判断是否已存在将新建的汇总数据库
+gdbpath= outpath + "\\" + outgdbname + ".gdb" #汇总数据库的完整路径
+if arcpy.Exists(gdbpath): #判断是否已存在将新建的汇总数据库
     pass
 else:
     arcpy.CreateFileGDB_management(outpath,outgdbname) #建立汇总数据库
@@ -23,20 +23,20 @@ for gdb in gdblist: #循环待合并GDB数据库
     datasets = arcpy.ListDatasets() #列出该数据库包含的要素数据集
     for ds in datasets: #循环要素数据集
         print("    " + ds)  # 打印该要素数据集的名称
-        if arcpy.Exists(allgdb+"\\"+ds): #判断汇总数据库中是否已存在同名要素数据集
+        if arcpy.Exists(gdbpath + "\\" + ds): #判断汇总数据库中是否已存在同名要素数据集
             pass
         else: #如果不存在改要素数据集
             desc = arcpy.Describe(ds) #获取该要素数据集的描述
             sr = desc.spatialReference #获取该要素数据集的空间参考
-            arcpy.CreateFeatureDataset_management(allgdb,ds,sr)  #在汇总数据库中创建同名的要素数据集，并且空间参考与待合并GDB数据集中的要素数据集保持一致
+            arcpy.CreateFeatureDataset_management(gdbpath, ds, sr)  #在汇总数据库中创建同名的要素数据集，并且空间参考与待合并GDB数据集中的要素数据集保持一致
 
 
         fcs=arcpy.ListFeatureClasses(feature_dataset=ds) #获取该要素数据集下的所有要素类
         for fc in fcs: #循环该要素数据集下的所有要素类
             print("        " + fc)  # 打印要素类名称便于查看进度
-            if arcpy.Exists(allgdb+"\\"+ds + "\\" + fc): #如果汇总数据库下已存在该名称的要素类
+            if arcpy.Exists(gdbpath + "\\" + ds + "\\" + fc): #如果汇总数据库下已存在该名称的要素类
                 arcpy.Append_management(gdb + "\\" + ds + "\\" + fc,
-                                        allgdb + "\\" + ds + "\\" + fc,
+                                        gdbpath + "\\" + ds + "\\" + fc,
                                         "NO_TEST") #将该要素类追加到汇总数据库下同名的要素类中
             else: #如果汇总数据库下不存在该名称的要素类
-                arcpy.FeatureClassToFeatureClass_conversion(fc,allgdb+"\\"+ds,fc) #复制该要素类至汇总数据库下的要素数据集中
+                arcpy.FeatureClassToFeatureClass_conversion(fc, gdbpath + "\\" + ds, fc) #复制该要素类至汇总数据库下的要素数据集中
