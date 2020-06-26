@@ -35,7 +35,7 @@ def fill(Field):
         return '03 林地'
     elif Field == '0401':
         return '04 牧草地'
-    elif Field == '0402':
+    elif Field == '0403':
         return '04牧草地'
     elif Field == '0404':
         return '18 其他自然保留地'
@@ -105,3 +105,4 @@ def fill(Field):
         return '18 其他自然保留地'
     else:
         return ""
+
