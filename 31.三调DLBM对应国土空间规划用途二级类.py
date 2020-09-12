@@ -33,6 +33,10 @@ def fill(Field):
         return '无'
     elif Field == '0307':
         return '无'
+    elif Field == '0401':
+        return '无'
+    elif Field == '0403':
+        return '无'
     elif Field == '0404':
         return '1805 其他草地'
     elif Field == '0602':
@@ -76,7 +80,7 @@ def fill(Field):
     elif Field == '1202':
         return '0501 设施农用地'
     elif Field == '1203':
-        return '0503田坎'
+        return '0503 田坎'
     elif Field == '1204':
         return '1801 盐碱地'
     elif Field == '1205':
