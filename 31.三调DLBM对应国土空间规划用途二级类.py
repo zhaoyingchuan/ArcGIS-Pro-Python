@@ -71,6 +71,8 @@ def fill(Field):
         return '1903 水库水面'
     elif Field == '1104':
         return '0504 坑塘水面'
+    elif Field == '1104A':
+        return '0504 坑塘水面'
     elif Field == '1107':
         return '0505 沟渠'
     elif Field == '1109':
