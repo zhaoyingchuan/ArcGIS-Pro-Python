@@ -1,4 +1,4 @@
-def convert1(DLBM):
+def convert3(DLBM):
     if DLBM == '0101':
         return '无'
     elif DLBM == '0102':

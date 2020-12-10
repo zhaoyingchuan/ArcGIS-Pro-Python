@@ -1,4 +1,4 @@
-def convert1(DLBM):
+def convert2(DLBM):
     if DLBM == '0101':
         return '0101 水田'
     elif DLBM == '0102':
