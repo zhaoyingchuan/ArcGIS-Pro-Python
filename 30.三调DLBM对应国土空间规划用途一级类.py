@@ -104,7 +104,7 @@ def convert1(DLBM):
     elif DLBM == '1201':
         return '23 其他土地'
     elif DLBM == '1202':
-        return ''
+        return '06 农业设施建设用地'
     elif DLBM == '1203':
         return '23 其他土地'
     elif DLBM == '1204':
