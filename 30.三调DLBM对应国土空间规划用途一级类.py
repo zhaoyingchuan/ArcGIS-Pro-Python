@@ -53,6 +53,8 @@ def convert1(DLBM):
         return '13 公用设施用地'
     elif DLBM == '0810':
         return '14 绿地与开敞空间用地'
+    elif DLBM == '0810A':
+        return '14 绿地与开敞空间用地'
     elif DLBM == '08H2':
         return '08 公共管理与公共服务用地'
     elif DLBM == '09':
@@ -82,6 +84,8 @@ def convert1(DLBM):
     elif DLBM == '1103':
         return '17 陆地水域'
     elif DLBM == '1104':
+        return '17 陆地水域'
+    elif DLBM == '1104A':
         return '17 陆地水域'
     elif DLBM == '1105':
         return '05 湿地'

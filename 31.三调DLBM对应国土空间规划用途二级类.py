@@ -53,6 +53,8 @@ def convert2(DLBM):
         return ''
     elif DLBM == '0810':
         return ''
+    elif DLBM == '0810A':
+        return '1403 广场用地'
     elif DLBM == '08H2':
         return ''
     elif DLBM == '09':
@@ -82,6 +84,8 @@ def convert2(DLBM):
     elif DLBM == '1103':
         return '1703 水库水面'
     elif DLBM == '1104':
+        return '1704 坑塘水面'
+    elif DLBM == '1104A':
         return '1704 坑塘水面'
     elif DLBM == '1105':
         return '0505 沿海滩涂'
