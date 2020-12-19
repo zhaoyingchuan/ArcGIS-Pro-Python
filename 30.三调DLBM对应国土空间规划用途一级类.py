@@ -55,6 +55,8 @@ def convert1(DLBM):
         return '14 绿地与开敞空间用地'
     elif DLBM == '0810A':
         return '14 绿地与开敞空间用地'
+    elif DLBM == '08H1':
+        return '08 公共管理与公共服务用地'
     elif DLBM == '08H2':
         return '08 公共管理与公共服务用地'
     elif DLBM == '09':

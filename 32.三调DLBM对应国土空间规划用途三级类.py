@@ -55,6 +55,8 @@ def convert3(DLBM):
         return '无'
     elif DLBM == '0810A':
         return '无'
+    elif DLBM == '08H1':
+        return '无'
     elif DLBM == '08H2':
         return ''
     elif DLBM == '09':
