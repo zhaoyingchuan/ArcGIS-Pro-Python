@@ -1,5 +1,5 @@
 def FindLabel(field):
-    w=4
+    w=4 #设置每一行的字符长度
     n = len(field) // w
     showlabel = ''
     i = 0
