@@ -4,6 +4,6 @@ def FindLabel(field):
     showlabel = ''
     i = 0
     while i <= n + 1:
-        showlabel = showlabel + [名称][i*w:(i+1)*w] + "\n"
+        showlabel = showlabel + field[i*w:(i+1)*w] + "\n"
         i += 1
     return showlabel
