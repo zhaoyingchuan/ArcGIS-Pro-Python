@@ -1,4 +1,4 @@
-def convert1(DLBM):
+﻿def convert1(DLBM):
     if DLBM == '0101':
         return '01 耕地'
     elif DLBM == '0102':
@@ -17,8 +17,6 @@ def convert1(DLBM):
         return '03 林地'
     elif DLBM == '0302':
         return '03 林地'
-    elif DLBM == '0303':
-        return '05 湿地'
     elif DLBM == '0304':
         return '05 湿地'
     elif DLBM == '0305':
@@ -89,8 +87,6 @@ def convert1(DLBM):
         return '17 陆地水域'
     elif DLBM == '1104A':
         return '17 陆地水域'
-    elif DLBM == '1105':
-        return '05 湿地'
     elif DLBM == '1106':
         return '05 湿地'
     elif DLBM == '1107':

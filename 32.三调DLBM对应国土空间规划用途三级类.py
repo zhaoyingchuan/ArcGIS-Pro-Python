@@ -1,4 +1,4 @@
-def convert3(DLBM):
+﻿def convert3(DLBM):
     if DLBM == '0101':
         return '无'
     elif DLBM == '0102':
@@ -16,8 +16,6 @@ def convert3(DLBM):
     elif DLBM == '0301':
         return '无'
     elif DLBM == '0302':
-        return '无'
-    elif DLBM == '0303':
         return '无'
     elif DLBM == '0304':
         return '无'
@@ -62,7 +60,7 @@ def convert3(DLBM):
     elif DLBM == '09':
         return '无'
     elif DLBM == '1001':
-        return '无'
+        return ''
     elif DLBM == '1002':
         return '无'
     elif DLBM == '1003':
@@ -89,8 +87,6 @@ def convert3(DLBM):
         return '无'
     elif DLBM == '1104A':
         return '无'
-    elif DLBM == '1105':
-        return '无'
     elif DLBM == '1106':
         return '无'
     elif DLBM == '1107':
@@ -98,8 +94,6 @@ def convert3(DLBM):
     elif DLBM == '1108':
         return '无'
     elif DLBM == '1109':
-        return '无'
-    elif DLBM == '1110':
         return '无'
     elif DLBM == '1201':
         return '无'

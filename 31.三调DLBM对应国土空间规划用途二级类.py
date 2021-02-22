@@ -1,4 +1,4 @@
-def convert2(DLBM):
+﻿def convert2(DLBM):
     if DLBM == '0101':
         return '0101 水田'
     elif DLBM == '0102':
@@ -17,14 +17,12 @@ def convert2(DLBM):
         return '0301 乔木林地'
     elif DLBM == '0302':
         return '0302 竹林地'
-    elif DLBM == '0303':
-        return '0507 红树林地'
     elif DLBM == '0304':
         return '0501 森林沼泽'
     elif DLBM == '0305':
         return '0303 灌木竹地'
     elif DLBM == '0306':
-        return '0502灌丛沼泽'
+        return '0502 灌丛沼泽'
     elif DLBM == '0307':
         return '0304 其他林地'
     elif DLBM == '0401':
@@ -89,18 +87,14 @@ def convert2(DLBM):
         return '1704 坑塘水面'
     elif DLBM == '1104A':
         return '1704 坑塘水面'
-    elif DLBM == '1105':
-        return '0505 沿海滩涂'
     elif DLBM == '1106':
         return '0506 内陆滩涂'
     elif DLBM == '1107':
         return ''
     elif DLBM == '1108':
-        return ''
+        return '0504 其他沼泽地'
     elif DLBM == '1109':
         return '1312 水工设施用地'
-    elif DLBM == '1110':
-        return '1706 冰川及常年积雪'
     elif DLBM == '1201':
         return '2301 空闲地'
     elif DLBM == '1202':
