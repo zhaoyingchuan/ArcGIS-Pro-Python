@@ -1,3 +1,4 @@
+#Python将标注以固定字符长度换行
 def FindLabel([HBHD], [HFPQMC]):
     label = str([HBHD])+str([HFPQMC])
     w = 7  # 设置每一行的字符长度
@@ -8,3 +9,7 @@ def FindLabel([HBHD], [HFPQMC]):
         showlabel = showlabel + label[i*w:(i+1)*w] + "\n"
         i += 1
     return showlabel
+
+#Python计算字段使用.split方法
+!项目名称!.split('县')[1]
+#!项目名称!为初始字段值，'县'为断点字，[1]为选择第二部分
